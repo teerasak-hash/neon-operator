@@ -1,0 +1,1 @@
+import CheckoutForm from "./CheckoutForm"; export default function CheckoutPage(){return <main><header className="header"><nav className="nav"><a href="/">🐟 ขายปลาออนไลน์</a></nav></header><div className="container"><CheckoutForm/></div></main>}
