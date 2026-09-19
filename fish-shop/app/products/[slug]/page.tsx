@@ -1,0 +1,3 @@
+import { prisma } from "@/lib/prisma";
+import { notFound } from "next/navigation";
+export default async function ProductPage({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const product=await prisma.product.findUnique({where:{slug}});if(!product||!product.active)notFound();return <main><header className="header"><nav className="nav"><a href="/">🐟 ขายปลาออนไลน์</a><span>ตะกร้า</span></nav></header><div className="container"><div className="card"><div className="image">🐟</div><h1>{product.name}</h1><p>{product.description}</p><p>มีสินค้า {product.stock} ตัว</p><div className="price">฿{Number(product.price).toLocaleString("th-TH")}</div><a className="button" href={`/checkout?product=${product.id}`}>สั่งซื้อ</a></div></div></main>}
