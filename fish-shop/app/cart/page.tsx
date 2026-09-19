@@ -1,0 +1,1 @@
+import CartView from "./CartView"; export default function CartPage(){return <main><header className="header"><nav className="nav"><a href="/">🐟 ขายปลาออนไลน์</a></nav></header><div className="container"><CartView/></div></main>}
